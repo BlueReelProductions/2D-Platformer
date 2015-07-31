@@ -11,14 +11,16 @@ namespace UnityStandardAssets._2D
         [SerializeField] private bool m_AirControl = false;                 // Whether or not a player can steer while jumping;
         [SerializeField] private LayerMask m_WhatIsGround;                  // A mask determining what is ground to the character
 
-        private Transform m_GroundCheck;    // A position marking where to check if the player is grounded.
-        const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
-        private bool m_Grounded;            // Whether or not the player is grounded.
-        private Transform m_CeilingCheck;   // A position marking where to check for ceilings
-        const float k_CeilingRadius = .01f; // Radius of the overlap circle to determine if the player can stand up
-        private Animator m_Anim;            // Reference to the player's animator component.
-        private Rigidbody2D m_Rigidbody2D;
-        private bool m_FacingRight = true;  // For determining which way the player is currently facing.
+        private Transform m_GroundCheck;    								// A position marking where to check if the player is grounded.
+        const float k_GroundedRadius = .2f; 								// Radius of the overlap circle to determine if grounded
+        private bool m_Grounded;            								// Whether or not the player is grounded.
+        private Transform m_CeilingCheck;   								// A position marking where to check for ceilings
+        const float k_CeilingRadius = .01f; 								// Radius of the overlap circle to determine if the player can stand up
+        private Animator m_Anim;            								// Reference to the player's animator component.
+        private Rigidbody2D m_Rigidbody2D;									// Reference to the player's Rigidbody2D component
+        private bool m_FacingRight = true;  								// For determining which way the player is currently facing.
+
+		private Transform graphics;											// Reference to the player graphics so we can change direction
 
         private void Awake()
         {
@@ -27,6 +29,12 @@ namespace UnityStandardAssets._2D
             m_CeilingCheck = transform.Find("CeilingCheck");
             m_Anim = GetComponent<Animator>();
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
+			graphics = transform.FindChild ("Graphics");
+
+			if(!graphics)
+			{
+				Debug.LogError("No player 'Graphics' object found as a child of player");
+			}
         }
 
 
@@ -106,9 +114,9 @@ namespace UnityStandardAssets._2D
             m_FacingRight = !m_FacingRight;
 
             // Multiply the player's x local scale by -1.
-            Vector3 theScale = transform.localScale;
+            Vector3 theScale = graphics.localScale;
             theScale.x *= -1;
-            transform.localScale = theScale;
+            graphics.localScale = theScale;
         }
     }
 }
