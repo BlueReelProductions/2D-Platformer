@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 431c7afc9190a43749c51aae080db7ea
 timeCreated: 1438284617
 licenseType: Free
@@ -33,6 +34,13 @@ TextureImporter:
     21300052: YeOldyKnifeGuy_0_26
     21300054: YeOldyKnifeGuy_0_27
     21300056: YeOldyKnifeGuy_0_28
+=======
+guid: ace0b16156c78984c9b6d31b618f2884
+timeCreated: 1438331221
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName: {}
+>>>>>>> pr/3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -59,14 +67,22 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
+<<<<<<< HEAD
     aniso: 16
+=======
+    aniso: -1
+>>>>>>> pr/3
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
+<<<<<<< HEAD
   spriteMode: 2
+=======
+  spriteMode: 1
+>>>>>>> pr/3
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -77,6 +93,7 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
+<<<<<<< HEAD
     sprites:
     - name: YeOldyKnifeGuy_0_0
       rect:
@@ -368,6 +385,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+=======
+    sprites: []
+>>>>>>> pr/3
   spritePackingTag: 
   userData: 
   assetBundleName: 
